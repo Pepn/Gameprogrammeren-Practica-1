@@ -69,5 +69,11 @@ namespace Practicum1
                 velocity.Y = 0;
             }
         }
+        
+        public int Lives
+        {
+            get { return lives; }
+            set { lives = value; }
+        }
     }
 }
