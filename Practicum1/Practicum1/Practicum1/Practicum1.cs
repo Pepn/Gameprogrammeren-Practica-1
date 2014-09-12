@@ -49,6 +49,25 @@ namespace Practicum1
             player2.Move(Keys.Up, Keys.Down, 250);
             player1.checkMaxRange();
             player2.checkMaxRange();
+            
+            if(ball.position.x < 0)
+            {
+                //reset ball
+                ball.position = new vector2(300,300);
+                player1.lives--;
+            }
+            else if(ball.position.x + ball.Width > Practicum1.Screen.X)
+            {
+                //reset ball
+                ball.position = new vector2(300,300);
+                player2.lives--;
+            }
+                
+            /*
+            if(player1.lives == 0)
+                gameover go next gamestate
+            */
+                
             base.Update(gameTime);
         }
         protected override void Draw(GameTime gameTime)
